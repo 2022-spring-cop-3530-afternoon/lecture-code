@@ -11,7 +11,7 @@ class Student
 		std::string fname;
 		std::string lname;
 	public:
-		Student ();
+		Student () {}
 		Student (std::string fname, std::string lname, double gpa);
 	friend std::ostream& operator<< (std::ostream& foo, const Student& s);
 };
