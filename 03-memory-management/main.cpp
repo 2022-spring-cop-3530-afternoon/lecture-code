@@ -34,5 +34,23 @@ int main ()
 	dynamicArray[0] = 12;
 	std::cout << dynamicArray[0] << std::endl;
 	delete [] dynamicArray;
+
+	int** matrix = nullptr;
+	matrix = new int*[10];
+	for (int i = 0; i < 10; ++i)
+	{
+		matrix[i] = new int[5];
+	}
+
+	matrix[2][1] = 15;
+	std::cout << matrix[2][1] << std::endl;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		delete [] matrix[i];
+	}
+
+	delete [] matrix;
+
 	return 0;
 }
