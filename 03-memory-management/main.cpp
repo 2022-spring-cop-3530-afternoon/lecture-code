@@ -20,5 +20,19 @@ int main ()
 	std::cout << twelveAddr << std::endl;
 	// twelveAddr = &six; // won't compile
 
+	// ARRAYS
+	int arr[12];
+	int array[] = {1,2,3,4,5};
+	std::cout << array[3] << std::endl;
+	std::cout << array << std::endl;
+	std::cout << *array << std::endl;
+	std::cout << *(array+3) << std::endl;
+
+	int* dynamicArray = nullptr;
+	//std::cout << *dynamicArray << std::endl;
+	dynamicArray = new int[1000];
+	dynamicArray[0] = 12;
+	std::cout << dynamicArray[0] << std::endl;
+	delete [] dynamicArray;
 	return 0;
 }
