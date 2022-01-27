@@ -59,6 +59,9 @@ int main ()
 	delete [] matrix;
 
 	Bar dive(20);
+	// Bar dive1 = dive; // would call copy constructor, not =
+	Bar dive1;
+	dive1 = dive;
 	Bar dives[10];
 	Foo(dive);
 
