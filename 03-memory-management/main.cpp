@@ -2,6 +2,12 @@
 #include <sstream>
 #include <fstream>
 #include <string>
+#include "bar.hpp"
+
+void Foo (Bar b)
+{
+}
+
 int a = 12; // global variable
 
 int main ()
@@ -51,6 +57,10 @@ int main ()
 	}
 
 	delete [] matrix;
+
+	Bar dive(20);
+	Bar dives[10];
+	Foo(dive);
 
 	return 0;
 }
