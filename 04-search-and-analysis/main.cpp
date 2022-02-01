@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-//#include "binary-search.hpp"
+#include "binary-search.hpp"
 #include "linear-search.hpp"
 #include <sys/time.h>
 
@@ -41,15 +41,14 @@ int main ()
 
 		index = LinearSearch::Find(arrayItems, LENGTH, searchKey);
 		PrintElapsedTime(checkpoint, "linear");
-//		fastIndex = BinarySearch::Find(arrayItems, LENGTH, searchKey);
-//		PrintElapsedTime(checkpoint, "binary");
+		fastIndex = BinarySearch::Find(arrayItems, LENGTH, searchKey);
+		PrintElapsedTime(checkpoint, "binary");
 
-		//if (index != fastIndex)
-		//{
-		//	std::cout << "The two searches found different indices, ERROR\n";
-		//}
-		//else if (index >= 0)
-		if (index >= 0)
+		if (index != fastIndex)
+		{
+			std::cout << "The two searches found different indices, ERROR\n";
+		}
+		else if (index >= 0)
 		{
 			std::cout << "Found " << searchKey << " at index " << index << std::endl;
 		}
