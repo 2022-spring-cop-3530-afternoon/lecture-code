@@ -20,11 +20,11 @@ int Search::Binary(std::vector<int> data, int searchKey, int left, int right)
 	else if (data[middle] < searchKey) // smaller that searchKey
 	{
 		// move left to middle
-		return Search::Binary(data, searchKey, middle, right);
+		return Search::Binary(data, searchKey, middle + 1, right);
 	}
 	else // larger
 	{
-		right = middle;
+		right = middle - 1;
 		return Search::Binary(data, searchKey, left, right);
 	}
 }
