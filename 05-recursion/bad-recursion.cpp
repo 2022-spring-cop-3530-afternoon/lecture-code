@@ -15,7 +15,7 @@ void f (int n)
 
 int main ()
 {
-	f(10);
+	f(1000000);
 	for (int i = 0; i < 100; ++i)
 	{
 		// do stuff

@@ -5,3 +5,6 @@ CATCH = ../catch/catch.o
 
 test: test.cpp $(CATCH) search.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
+
+clean:
+	$(RM) *.o a.out test # $(CATCH)
