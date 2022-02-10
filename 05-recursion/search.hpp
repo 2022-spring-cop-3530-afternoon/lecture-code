@@ -4,6 +4,9 @@
 
 class Search
 {
+	private:
+		static int Binary(std::vector<int> data, int searchKey, int left, int right);
+
 	public:
 		static int Binary(std::vector<int> data, int searchKey);
 };
