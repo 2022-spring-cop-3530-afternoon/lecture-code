@@ -22,3 +22,13 @@ TEST_CASE("Testing utilities")
 
 	CHECK(12.5 == d);
 }
+
+TEST_CASE("Test max")
+{
+	int a[] = {12, 34, -12, 0, 43, 99, 3};
+	REQUIRE(99 == Max(a, 7 /* elements in the array */));
+
+
+
+
+}
