@@ -1,13 +1,8 @@
 
-void Swap (int& x, int& y)
+template <typename T>
+void Swap (T& x, T& y)
 {
-	int	temp = x;
-	x = y;
-	y = temp;
-}
-void Swap (double& x, double& y)
-{
-	double	temp = x;
+	T	temp = x;
 	x = y;
 	y = temp;
 }
