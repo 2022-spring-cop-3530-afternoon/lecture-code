@@ -29,6 +29,10 @@ TEST_CASE("Test max")
 	REQUIRE(99 == Max(a, 7 /* elements in the array */));
 
 
+	Student roster[4];
+
+
+	REQUIRE(studentA == Max(roster, 4);
 
 
 }
