@@ -15,4 +15,10 @@ TEST_CASE("Testing utilities")
 	double d = 23.6;
 	Swap(c, d);
 	CHECK(23.6 == c);
+
+	// two below are equivalent
+	CHECK((23.61 > c && 23.59 < c));
+	CHECK(Approx(23.6) == c); // Catch2 specific
+
+	CHECK(12.5 == d);
 }
