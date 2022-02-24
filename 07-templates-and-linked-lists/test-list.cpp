@@ -7,7 +7,11 @@ TEST_CASE("Testing Default list")
 {
 	List<int> l;
 	REQUIRE(nullptr == l.GetFront());
-	l.InsertAtFront(4);
 
+	l.InsertAtFront(4);
 	CHECK(4 == l.GetFront()->GetData());
+
+	l.InsertAtFront(3);
+	CHECK(3 == l.GetFront()->GetData());
+	CHECK(4 == l.GetFront()->GetNext()->GetData());
 }
