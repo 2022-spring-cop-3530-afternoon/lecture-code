@@ -10,6 +10,7 @@ class List
 	public:
 		List ();
 		Node<T>* GetFront ();
+		void InsertAtFront (T inData);
 };
 
 #endif /*LIST_HPP*/
