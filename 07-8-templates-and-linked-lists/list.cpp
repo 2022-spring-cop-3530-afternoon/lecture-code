@@ -40,5 +40,21 @@ std::string List<T>::Traverse ()
 	return listOutput.str();
 }
 
+template <typename T>
+List<T>::~List()
+{
+	delete this->front;
+}
+
+template <typename T>
+void List<T>::DeleteFromFront ()
+{
+	Node<T>* garbage = this->front;
+	if (garbage != nullptr)
+	{
+		this->front = garbage->GetNext();
+		delete garbage;
+	}
+}
 
 template class List<int>;

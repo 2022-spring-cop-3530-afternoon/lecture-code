@@ -13,7 +13,9 @@ class List
 		List ();
 		Node<T>* GetFront ();
 		void InsertAtFront (T inData);
+		void DeleteFromFront ();
 		std::string Traverse ();
+		~List();
 };
 
 #endif /*LIST_HPP*/

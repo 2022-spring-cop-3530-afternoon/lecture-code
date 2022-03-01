@@ -18,4 +18,10 @@ TEST_CASE("Testing Default list")
 	CHECK(4 == l.GetFront()->GetNext()->GetData());
 
 	CHECK("3 -> 4" == l.Traverse());
+
+	l.DeleteFromFront();
+	CHECK(4 == l.GetFront()->GetData());
+	CHECK("4" == l.Traverse());
+	l.DeleteFromFront();
+	l.DeleteFromFront();
 }
