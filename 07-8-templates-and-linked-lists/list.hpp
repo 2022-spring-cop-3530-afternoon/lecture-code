@@ -1,6 +1,8 @@
 #ifndef LIST_HPP
 #define LIST_HPP
 #include "node.hpp"
+#include <string>
+#include <sstream>
 
 template <typename T>
 class List
@@ -11,6 +13,7 @@ class List
 		List ();
 		Node<T>* GetFront ();
 		void InsertAtFront (T inData);
+		std::string Traverse ();
 };
 
 #endif /*LIST_HPP*/
