@@ -24,4 +24,11 @@ TEST_CASE("Testing Default list")
 	CHECK("4" == l.Traverse());
 	l.DeleteFromFront();
 	l.DeleteFromFront();
+
+	l.InsertAtFront(3);
+	l.InsertAtFront(4);
+	l.InsertAtFront(7);
+	l.InsertAtFront(9);
+	l.InsertAtFront(13);
+	l.InsertAtFront(23);
 }
