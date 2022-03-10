@@ -1,5 +1,6 @@
 #include "../catch/catch.hpp"
 #include "insertion-sort.hpp"
+#include "merge-sort.hpp"
 #include <vector>
 
 TEST_CASE("On^2 algs")
@@ -9,7 +10,15 @@ TEST_CASE("On^2 algs")
 
     SECTION("Insertion sort")
     {
+        CHECK(sorted != unsorted);
         InsertionSort::Sort(unsorted);
+        CHECK(sorted == unsorted);
+    }
+
+    SECTION("Merge sort")
+    {
+        CHECK(sorted != unsorted);
+        MergeSort::Sort(unsorted);
         CHECK(sorted == unsorted);
     }
 }

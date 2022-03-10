@@ -1,9 +1,11 @@
-Sort (std::vector<int>& input)
+#include "merge-sort.hpp"
+
+void MergeSort::Sort (std::vector<int>& input)
 {
 	Sort(input, 0, input.size() - 1);
 }
 
-Sort (std::vector<int>& input, std:size_t left, std::size_t right)
+void MergeSort::Sort (std::vector<int>& input, std::size_t left, std::size_t right)
 {
 	if (left >= right)
 	{
@@ -15,9 +17,9 @@ Sort (std::vector<int>& input, std:size_t left, std::size_t right)
 	Merge(input, left, right);
 }
 
-Merge (std::vector<int>& input, std:size_t left, std::size_t right)
+void MergeSort::Merge (std::vector<int>& sortedOutput, std::size_t left, std::size_t right)
 {
 	std::size_t middle = (left + right) / 2;
-
+	std::vector<int> input = sortedOutput;
 
 }

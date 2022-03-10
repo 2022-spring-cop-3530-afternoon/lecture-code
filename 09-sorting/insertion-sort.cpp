@@ -6,7 +6,7 @@ void InsertionSort::Sort(std::vector<int>& input)
 	{
 		std::size_t currentIndex = i;
  // too small for current spot
-		while ( currentIndex > 0 &&
+		while (currentIndex > 0 &&
 			input[currentIndex] < input[currentIndex - 1])
 		{
 			Swap(input[currentIndex], input[currentIndex - 1]);
