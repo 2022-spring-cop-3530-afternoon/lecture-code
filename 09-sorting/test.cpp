@@ -1,4 +1,5 @@
-#include "../catch/catch.o"
+#include "../catch/catch.hpp"
+#include "insertion-sort.hpp"
 #include <vector>
 
 TEST_CASE("On^2 algs")
