@@ -22,4 +22,30 @@ void MergeSort::Merge (std::vector<int>& sortedOutput, std::size_t left, std::si
 	std::size_t middle = (left + right) / 2;
 	std::vector<int> input = sortedOutput;
 
+	std::size_t leftRead = left;
+	std::size_t rightRead = middle + 1;
+
+	while (leftRead <= middle && rightRead <= right)
+	{
+		if (input[leftRead] < input[rightRead])
+		{
+			sortedOutput[left] = input[leftRead++];
+		}
+		else
+		{
+			sortedOutput[left] = input[rightRead];
+			++rightRead;
+		}
+		++left;
+	}
+	// right half ran out of elements first
+	while (leftRead <= middle)
+	{
+		sortedOutput[left++] = input[leftRead++];
+	}
+	// left half ran out of elements first
+	while (rightRead <= right)
+	{
+		sortedOutput[left++] = input[rightRead++];
+	}
 }
