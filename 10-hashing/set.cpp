@@ -12,12 +12,14 @@ class S
 		int id;
 		std::string title;
 	public:
-		S(int i = 0, std::string s = "")
+		S (int i = 0, std::string s = "")
 		{
 			this->id = i;
 			this->title = s;
 		}
-		int GetID () { return this->id; } const
+		int GetID () const { return this->id; }
+		std::string GetTitle () const { return this->title; }
+		bool operator == (const S& other) const { return this->id == other.id; }
 };
 
 namespace std
@@ -27,7 +29,9 @@ namespace std
 	{
 		size_t operator () (const S& objectToHash) const
 		{
-			return hash<int>(objectToHash.GetID());
+			// return hash<int>(objectToHash.GetID());
+			// fixed above by adding the function name being called - specifically ()
+			return hash<int>()(objectToHash.GetID());
 		}
 	};
 }
@@ -46,6 +50,17 @@ int main ()
 	S foo(12, "foo");
 	std::unordered_set<S> ess;
 
+	S bar(12, "bar"); // same id, different title
+
+	ess.insert(foo);
+	ess.insert(bar);
+
+	// the below will only print "foo" since the == operator is only using ID
+	//  which is the same for the `foo` and `bar` objects
+	for (const S& thing: ess)
+	{
+		std::cout << thing.GetTitle() << std::endl;
+	}
 
 	return 0;
 }
