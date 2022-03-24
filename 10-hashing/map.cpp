@@ -40,5 +40,12 @@ int main ()
 	{
 		std::cout << "found didn't find\n";
 	}
+
+	//for (auto& d: map) // equivalent to below
+	for (const std::pair<std::string,int>& d: map)
+	{
+		std::cout << d.first << ": " << d.second << std::endl;
+	}
+
 	return 0;
 }
