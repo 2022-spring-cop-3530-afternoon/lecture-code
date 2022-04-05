@@ -6,8 +6,13 @@ class Node
 {
 	private:
 		T data;
+		Node<T>* left = nullptr;
+		Node<T>* right = nullptr;
 	public:
 		Node(T data);
+		T GetData ();
+		Node<T>* GetLeft ();
+		Node<T>* GetRight ();
 };
 
 #endif /*NODE_HPP*/
