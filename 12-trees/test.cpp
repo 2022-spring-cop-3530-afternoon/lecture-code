@@ -25,4 +25,12 @@ TEST_CASE ("Tree")
 	Tree<int> t;
 	t.Insert(2);
 	CHECK(2 == t.GetRoot()->GetData());
+
+	t.Insert(1);
+	t.Insert(4);
+	t.Insert(5);
+	t.Insert(3);
+
+	CHECK(2 == t.GetRoot()->GetData());
+	CHECK(3 == t.GetRoot()->GetRight()->GetLeft()->GetData());
 }
