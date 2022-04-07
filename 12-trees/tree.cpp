@@ -65,4 +65,22 @@ Node<T>* Tree<T>::GetRoot()
 	return this->root;
 }
 
+template <typename T>
+Tree<T>::~Tree ()
+{
+	this->DeleteSubtree(this->root);
+}
+
+template <typename T>
+void Tree<T>::DeleteSubtree (Node<T>* subtreeRoot)
+{
+	if (subtreeRoot == nullptr)
+	{
+		return;
+	}
+	this->DeleteSubtree(subtreeRoot->GetLeft());
+	this->DeleteSubtree(subtreeRoot->GetRight());
+	delete subtreeRoot;
+}
+
 template class Tree<int>;

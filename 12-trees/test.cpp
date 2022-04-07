@@ -18,6 +18,8 @@ TEST_CASE("Node test")
 
 	CHECK(l == n.GetLeft());
 	CHECK(r == n.GetRight());
+	delete l;
+	delete r;
 }
 
 TEST_CASE ("Tree")
