@@ -33,4 +33,6 @@ TEST_CASE ("Tree")
 
 	CHECK(2 == t.GetRoot()->GetData());
 	CHECK(3 == t.GetRoot()->GetRight()->GetLeft()->GetData());
+
+	CHECK("1 2 3 4 5 " == t.Print());
 }

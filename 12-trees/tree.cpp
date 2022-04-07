@@ -40,6 +40,26 @@ void Tree<T>::Insert (T value)
 }
 
 template <typename T>
+std::string Tree<T>::Print (Node<T>* subtreeRoot)
+{
+	if (subtreeRoot == nullptr)
+	{
+		return "";
+	}
+	std::ostringstream out;
+	out << this->Print(subtreeRoot->GetLeft());
+	out << subtreeRoot->GetData() << ' ';
+	out << this->Print(subtreeRoot->GetRight());
+	return out.str();
+}
+template <typename T>
+std::string Tree<T>::Print ()
+{
+	// gateway function
+	return this->Print(this->root);
+}
+
+template <typename T>
 Node<T>* Tree<T>::GetRoot()
 {
 	return this->root;
