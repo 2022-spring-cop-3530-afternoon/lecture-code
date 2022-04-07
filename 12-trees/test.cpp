@@ -1,5 +1,6 @@
 #include "../catch/catch.hpp"
 #include "node.hpp"
+#include "tree.hpp"
 
 TEST_CASE("Node test")
 {
@@ -17,4 +18,11 @@ TEST_CASE("Node test")
 
 	CHECK(l == n.GetLeft());
 	CHECK(r == n.GetRight());
+}
+
+TEST_CASE ("Tree")
+{
+	Tree<int> t;
+	t.Insert(2);
+	CHECK(2 == t.GetRoot()->GetData());
 }
