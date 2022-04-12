@@ -3,6 +3,8 @@
 
 class Heap
 {
+	public:
+		int GetParent (int index);
 };
 
 #endif /*HEAP_HPP*/
