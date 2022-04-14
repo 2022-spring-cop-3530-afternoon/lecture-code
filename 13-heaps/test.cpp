@@ -25,4 +25,6 @@ TEST_CASE("Build heap")
 
 	h.Insert(4);
 	CHECK(14 == h.Peek());
+
+	CHECK(14 == h.Pop());
 }

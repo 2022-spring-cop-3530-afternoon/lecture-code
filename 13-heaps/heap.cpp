@@ -29,6 +29,47 @@ void Heap::Swap (int a, int b)
 	this->data[b] = temp;
 }
 
+void Heap::PercolateDown (int index)
+{
+	// check both children
+	int leftChildIndex = this->GetLeft(index);
+	int rightChildIndex = this->GetRight(index);
+
+	if (leftChildIndex < this->numberOfElements)
+	{
+		if (rightChildIndex < this->numberOfElements)
+		{
+			if (this->data[index] < this->data[leftChildIndex] || this->data[index] < this->data[rightChildIndex])
+			{
+				// if not max, swap with max
+				if (this->data[rightChildIndex] > this->data[leftChildIndex])
+				{
+					this->Swap(index, rightChildIndex);
+					this->PercolateDown(rightChildIndex);
+				}
+				else // left child is larger
+				{
+					this->Swap(index, leftChildIndex);
+					this->PercolateDown(leftChildIndex);
+				}
+			}
+		}
+		else // only have left child
+		{
+			if (this->data[index] < this->data[leftChildIndex])
+			{
+				this->Swap(index, leftChildIndex);
+				// cannot have grandchilden
+				// since doesn't have right child
+			}
+		}
+	}
+	else // have no children
+	{
+		// do nothing
+	}
+}
+
 void Heap::Percolate (int index)
 {
 	int parentId = this->GetParent(index);
@@ -63,4 +104,22 @@ int Heap::Peek ()
 		throw "Noooo";
 	}
 	return this->data[0];
+}
+
+int Heap::Pop ()
+{
+	if (this->numberOfElements <= 0)
+	{
+		throw "Noooo";
+	}
+	int poppedValue = this->data[0];
+
+	// update the heap
+	// move "worst" to top
+	this->data[0] = this->data[this->numberOfElements - 1];
+	--this->numberOfElements;
+	// percolate down
+	this->PercolateDown(0);
+
+	return poppedValue;
 }

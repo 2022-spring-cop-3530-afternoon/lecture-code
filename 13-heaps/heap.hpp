@@ -7,6 +7,7 @@ class Heap
 		int data[100];
 		int numberOfElements = 0;
 		void Percolate (int index);
+		void PercolateDown (int index);
 		void Swap (int a, int b);
 	public:
 		int GetParent (int index);
@@ -14,6 +15,7 @@ class Heap
 		int GetRight (int index);
 		void Insert (int newValue);
 		int Peek ();
+		int Pop ();
 };
 
 #endif /*HEAP_HPP*/
