@@ -3,6 +3,12 @@
 
 class Graph
 {
+	private:
+		int vertexCount;
+		bool ** matrix;
+	public:
+		Graph (int vertexCount);
+		bool HasAdjacency (int s, int t);
 };
 
 #endif /*GRAPH_HPP*/
