@@ -8,4 +8,7 @@ TEST_CASE("Adjacency Matrix")
 	REQUIRE(!g.HasAdjacency(0, 1));
 	REQUIRE(g.HasAdjacency(0, 1) == false);
 
+	g.SetAdjacency(0,1);
+	CHECK(g.HasAdjacency(0, 1));
+	CHECK(g.HasAdjacency(1, 0));
 }

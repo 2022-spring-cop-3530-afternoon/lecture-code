@@ -9,6 +9,7 @@ class Graph
 	public:
 		Graph (int vertexCount);
 		bool HasAdjacency (int s, int t);
+		void SetAdjacency (int s, int t);
 };
 
 #endif /*GRAPH_HPP*/
